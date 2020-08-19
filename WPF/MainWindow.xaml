@@ -1,0 +1,143 @@
+﻿<Window x:Class="EditingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:EditingDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="Reordering Columns Demo" Icon="App.ico"
+        Height="710" Width="1024" WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="/Syncfusion.SfGrid.WPF;component/Styles/Styles.xaml" />
+    </Window.Resources>
+    
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfdatagrid" Margin="10"
+                                   ColumnSizer="Auto"
+                                   Background="White"
+                                   AutoGenerateColumns="False" 
+                                   AllowFiltering="True" AllowEditing="True"
+                                   ItemsSource="{Binding Products}">
+            
+            <interactivity:Interaction.Behaviors>
+                <local:SfDataGridBehavior/>
+            </interactivity:Interaction.Behaviors>
+            
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTemplateColumn MappingName="ProductId" syncfusion:FocusManagerHelper.WantsKeyInput= "True">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBox x:Name="text" Text="{Binding ProductId}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                </syncfusion:GridTemplateColumn>
+
+                <syncfusion:GridTemplateColumn MappingName="ProductName">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <ComboBox syncfusion:VisualContainer.WantsMouseInput="True">
+                                    <ComboBoxItem Content="Item 1" />
+                                    <ComboBoxItem Content="Item 2" />
+                                    <ComboBoxItem Content="Item 3" />
+                                    <ComboBoxItem Content="Item 4" />
+                                </ComboBox>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                </syncfusion:GridTemplateColumn>
+
+                <syncfusion:GridTemplateColumn MappingName="SalesID" syncfusion:FocusManagerHelper.WantsKeyInput="True">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding SalesID, Mode=TwoWay}" Grid.Column="0"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                                <TextBox Text="{Binding CustomerName, Mode=TwoWay}" Grid.Column="1"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                    <syncfusion:GridTemplateColumn.EditTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding SalesID, Mode=TwoWay}" Grid.Column="0"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.EditTemplate>
+                </syncfusion:GridTemplateColumn>
+
+                <syncfusion:GridTemplateColumn MappingName="CustomerName">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CustomerName}"/>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                    <syncfusion:GridTemplateColumn.EditTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Text="{Binding SalesID, Mode=TwoWay}" Grid.Column="0"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                                <TextBox Text="{Binding CustomerName, Mode=TwoWay}" Grid.Column="1"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.EditTemplate>
+                </syncfusion:GridTemplateColumn>
+
+                <syncfusion:GridTemplateColumn MappingName="CustomerId">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CustomerId}"
+                                           syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                    <syncfusion:GridTemplateColumn.EditTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TextBox Text="{Binding CustomerId, Mode=TwoWay}"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.EditTemplate>
+                </syncfusion:GridTemplateColumn>
+
+                <syncfusion:GridTemplateColumn MappingName="CustomerBranch">
+                    <syncfusion:GridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CustomerBranch}"
+                                           syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.CellTemplate>
+                    <syncfusion:GridTemplateColumn.EditTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TextBox Text="{Binding CustomerBranch, Mode=TwoWay}"
+                                             syncfusion:FocusManagerHelper.FocusedElement="True"/>
+                            </Grid>
+                        </DataTemplate>
+                    </syncfusion:GridTemplateColumn.EditTemplate>
+                </syncfusion:GridTemplateColumn>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>
