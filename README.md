@@ -4,7 +4,7 @@ How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key
 
 # About the sample
 
-By default, SfDataGrid does not provide the support to navigate multiple controls loaded in GridTemplateColumn by Tab key, you can achieve this by overriding ShouldGridTryToHandleKeyDown method in GridCellTemplateRenderer.
+By default, SfDataGrid does not support navigation to the controls inside GridTemplateColumn, you can achieve this by overriding ShouldGridTryToHandleKeyDown method in GridCellTemplateRenderer.
 
 ```c#
 public class SfDataGridBehavior : Behavior<SfDataGrid>
