@@ -21,6 +21,7 @@
                                    Background="White"
                                    AutoGenerateColumns="False" 
                                    AllowFiltering="True" AllowEditing="True"
+                                   EditTrigger="OnTap"
                                    ItemsSource="{Binding Products}">
             
             <interactivity:Interaction.Behaviors>
@@ -28,7 +29,7 @@
             </interactivity:Interaction.Behaviors>
             
             <syncfusion:SfDataGrid.Columns>
-                <syncfusion:GridTemplateColumn MappingName="ProductId" syncfusion:FocusManagerHelper.WantsKeyInput= "True">
+                <syncfusion:GridTemplateColumn MappingName="ProductId" HeaderText="Product ID" syncfusion:FocusManagerHelper.WantsKeyInput= "True">
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
@@ -38,7 +39,7 @@
                     </syncfusion:GridTemplateColumn.CellTemplate>
                 </syncfusion:GridTemplateColumn>
 
-                <syncfusion:GridTemplateColumn MappingName="ProductName">
+                <syncfusion:GridTemplateColumn MappingName="ProductName" HeaderText="Product Name" >
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
@@ -53,7 +54,7 @@
                     </syncfusion:GridTemplateColumn.CellTemplate>
                 </syncfusion:GridTemplateColumn>
 
-                <syncfusion:GridTemplateColumn MappingName="SalesID" syncfusion:FocusManagerHelper.WantsKeyInput="True">
+                <syncfusion:GridTemplateColumn MappingName="SalesID" HeaderText="Sales ID" syncfusion:FocusManagerHelper.WantsKeyInput="True">
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -82,7 +83,7 @@
                     </syncfusion:GridTemplateColumn.EditTemplate>
                 </syncfusion:GridTemplateColumn>
 
-                <syncfusion:GridTemplateColumn MappingName="CustomerName">
+                <syncfusion:GridTemplateColumn MappingName="CustomerName" HeaderText="Customer Name" >
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding CustomerName}"/>
@@ -104,7 +105,7 @@
                     </syncfusion:GridTemplateColumn.EditTemplate>
                 </syncfusion:GridTemplateColumn>
 
-                <syncfusion:GridTemplateColumn MappingName="CustomerId">
+                <syncfusion:GridTemplateColumn MappingName="CustomerId" HeaderText="Customer ID" >
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding CustomerId}"
@@ -121,7 +122,7 @@
                     </syncfusion:GridTemplateColumn.EditTemplate>
                 </syncfusion:GridTemplateColumn>
 
-                <syncfusion:GridTemplateColumn MappingName="CustomerBranch">
+                <syncfusion:GridTemplateColumn MappingName="CustomerBranch" HeaderText="Customer Branch">
                     <syncfusion:GridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding CustomerBranch}"
