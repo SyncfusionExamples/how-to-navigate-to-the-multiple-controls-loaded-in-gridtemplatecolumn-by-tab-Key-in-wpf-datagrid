@@ -1,10 +1,10 @@
 # How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in WPF DataGrid (SfDataGrid)?
 
-How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
+This sample show cases how to navigate to the multiple controls loaded in [GridTemplateColumn](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridTemplateColumn.html) by Tab Key in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
 
 # About the sample
 
-By default, [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) does not support navigation to controls within GridTemplateColumn. You can achieve this by overriding ShouldGridTryToHandleKeyDown method in GridCellTemplateRenderer.
+[WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) does not support navigation to controls within [GridTemplateColumn](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.GridTemplateColumn.html). You can achieve this by overriding [ShouldGridTryToHandleKeyDown](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.Cells.GridVirtualizingCellRenderer%602~ShouldGridTryToHandleKeyDown.html) method in [GridCellTemplateRenderer](https://help.syncfusion.com/cr/cref_files/wpf/Syncfusion.SfGrid.WPF~Syncfusion.UI.Xaml.Grid.Cells.GridCellTemplateRenderer.html).
 
 ```c#
 public class SfDataGridBehavior : Behavior<SfDataGrid>
