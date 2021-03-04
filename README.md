@@ -1,10 +1,10 @@
 # How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in WPF DataGrid (SfDataGrid)?
 
-How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in WPF DataGrid (SfDataGrid)?
+How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid)?
 
 # About the sample
 
-By default, SfDataGrid does not support navigation to the controls inside GridTemplateColumn, you can achieve this by overriding ShouldGridTryToHandleKeyDown method in GridCellTemplateRenderer.
+By default, [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) does not support navigation to controls within GridTemplateColumn. You can achieve this by overriding ShouldGridTryToHandleKeyDown method in GridCellTemplateRenderer.
 
 ```c#
 public class SfDataGridBehavior : Behavior<SfDataGrid>
