@@ -76,5 +76,8 @@ public class CustomGridCellTemplateRenderer : GridCellTemplateRenderer
     }
 }
 ```
+
+KB article - [How to navigate to the multiple controls loaded in GridTemplateColumn by Tab Key in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/11912/how-to-navigate-to-the-multiple-controls-loaded-in-gridtemplatecolumn-by-tab-key-in-wpf)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
